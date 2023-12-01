@@ -1,0 +1,12 @@
+button {
+    background-color: coral;
+    color:chartreuse;
+    font-size: 2rem;
+    font-weight: bold;
+    height: 4rem;
+    width: 4rem;
+}
+
+button:hover{
+    cursor: pointer;
+}
