@@ -98,7 +98,7 @@ function uncover(id) {
         clearInterval(regressiveTime);
         scoreboard.innerHTML = `Aciertos: ${hits} &#129321;`;
         movementsMeter.innerHTML = `Movimientos: ${movements}`;
-        clock.innerHTML = `¡Bravo!¡Lo lograste! &#129395;<br>En ${inicialTime - timeLeft} segundos.`;
+        clock.innerHTML = `¡Bravo!  ¡Lo lograste! &#129395;<br>Tu tiempo fue de ${inicialTime - timeLeft} segundos.`;
       }
 
     } else {
