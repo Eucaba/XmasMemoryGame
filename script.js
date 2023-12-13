@@ -25,6 +25,8 @@ numbers = numbers.sort(() => { return Math.random() - 0.5 });
 console.log(numbers);
 
 //funciones "auxuliares" (por decir algo)
+
+//cuenta atrás
 function mesureTime(){
   regressiveTime = setInterval(()=>{ 
     timeLeft--;
@@ -37,17 +39,19 @@ function mesureTime(){
 } /* setInterval(()=>{}, n)
 --> {} = función obviously
 --> n = intervalo en milisegundos 
---> setInterval evuelve un identificadorpara referenciarlo, lo recogemos en regressiveTime*/
+--> setInterval devuelve un identificadorpara referenciarlo, lo recogemos en regressiveTime*/
 
+//cuando se agota el tiempo, avisamos que perdió y giramos y bloqueamos las cartas
 function uncoverAndBlock(){
+  clock.innerHTML = `Lástima... &#128542;<br>¡Se acabó el tiempo!`;
   for (let i = 0; i < numbers.length; i++){
-    let cosita = 100*i;
+    let interval = 100*i;
     setInterval(()=>{
       let blockedCard = document.getElementById(i)
       blockedCard.disabled = true;
-      blockedCardContent = numbers[i];
+      blockedCardContent = `<img src="./images/${numbers[i]}.jpg" alt="Card ${numbers[i]}"></img>`;
       blockedCard.innerHTML = blockedCardContent;
-    }, cosita);
+    }, interval);
   } 
 }
 
@@ -66,13 +70,14 @@ function uncover(id) {
 
   if (uncoveredCards == 1) {
     card1 = document.getElementById(id);
-    card1Content = numbers[id];
+    card1Content = `<img src="./images/${numbers[id]}.jpg" alt="Card ${numbers[id]}"></img>`;
     card1.innerHTML = card1Content;
     card1.disabled = true;
 
   } else if (uncoveredCards == 2) {
     card2 = document.getElementById(id);
-    card2Content = numbers[id];
+    card2Content = `<img src="./images/${numbers[id]}.jpg" alt="Card ${numbers[id]}"></img>`;
+    //card2Content = numbers[id];
     card2.innerHTML = card2Content;
     card2.disabled = true;
     movements++; //al levantar tarjeta sumamos un nuevo movimiento (el juego funciona por parejas de cartas)
@@ -91,9 +96,9 @@ function uncover(id) {
 
       if (hits == 10) {
         clearInterval(regressiveTime);
-        scoreboard.innerHTML = `Aciertos: ${hits} ¡GANASTE!`;
-        movementsMeter.innerHTML = `Movimientos FINALES: ${movements}`;
-        clock.innerHTML = `¡Lo has logrado en  ${inicialTime - timeLeft} segundos!`;
+        scoreboard.innerHTML = `Aciertos: ${hits} &#129321;`;
+        movementsMeter.innerHTML = `Movimientos: ${movements}`;
+        clock.innerHTML = `¡Bravo!¡Lo lograste! &#129395;<br>En ${inicialTime - timeLeft} segundos.`;
       }
 
     } else {

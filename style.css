@@ -1,12 +1,54 @@
-button {
-    background-color: coral;
-    color:chartreuse;
-    font-size: 2rem;
-    font-weight: bold;
-    height: 4rem;
-    width: 4rem;
+body {
+    background: rgb(102,0,0);
+    font-family: 'Englebert', cursive;
+    color: white;
 }
 
-button:hover{
+#main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+}
+
+#game, #gameStatistics {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 1.5%;
+    margin: 5px;
+    padding: 19px;
+}
+
+#title {
+    margin-top: 2%;
+}
+.statistics {
+    border: 1px solid white;
+    border-radius: 1.5%;
+    height: 7rem;
+    width: 26rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+button {
+    background-color: white;
+    font-size: 2rem;
+    font-weight: bold;
+    border-radius: 3%;
+    border: none;
+    height: 6.5rem;
+    width: 6.5rem;
+}
+
+button:hover {
     cursor: pointer;
+}
+
+img {
+ width: 95%;
+}
+
+h1, h2, h3{
+    text-align: center;
 }

@@ -4,45 +4,63 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Englebert&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/e97f86a553.js" crossorigin="anonymous"></script>
     <title>Christmas memory game</title>
 </head>
 <body>
-
-    <table>
-        <tr>
-            <td><button id="0" onclick="uncover(0)"></button></td>
-            <td><button id="1" onclick="uncover(1)"></button></td>
-            <td><button id="2" onclick="uncover(2)"></button></td>
-            <td><button id="3" onclick="uncover(3)"></button></td>
-            <td><button id="4" onclick="uncover(4)"></button></td>
-        </tr>
-        <tr>
-            <td><button id="5" onclick="uncover(5)"></button></td>
-            <td><button id="6" onclick="uncover(6)"></button></td>
-            <td><button id="7" onclick="uncover(7)"></button></td>
-            <td><button id="8" onclick="uncover(8)"></button></td>
-            <td><button id="9" onclick="uncover(9)"></button></td>
-        </tr>
-        <tr>
-            <td><button id="10" onclick="uncover(10)"></button></td>
-            <td><button id="11" onclick="uncover(11)"></button></td>
-            <td><button id="12" onclick="uncover(12)"></button></td>
-            <td><button id="13" onclick="uncover(13)"></button></td>
-            <td><button id="14" onclick="uncover(14)"></button></td>
-        </tr>
-        <tr>
-            <td><button id="15" onclick="uncover(15)"></button></td>
-            <td><button id="16" onclick="uncover(16)"></button></td>
-            <td><button id="17" onclick="uncover(17)"></button></td>
-            <td><button id="18" onclick="uncover(18)"></button></td>
-            <td><button id="19" onclick="uncover(19)"></button></td>
-        </tr>
-    </table>
-
-    <h1 id="time"> Tiempo restante: 60 segundos </h1>
-    <h1 id="hits"> Aciertos: 0 </h1>
-    <h1 id="movements"> Movimientos: 0 </h1>
-
+    <header>
+        <h1 id="title">Jingle Pairs! &#128276;&#128276;</h1>
+        <h2>Empareja las 20 imágenes navideñas antes de que se agote el tiempo.</h2>
+    </header>
+    <div id="main">
+        <section id="game">
+            <table>
+                <tr>
+                    <td><button id="0" onclick="uncover(0)"></button></td>
+                    <td><button id="1" onclick="uncover(1)"></button></td>
+                    <td><button id="2" onclick="uncover(2)"></button></td>
+                    <td><button id="3" onclick="uncover(3)"></button></td>
+                    <td><button id="4" onclick="uncover(4)"></button></td>
+                </tr>
+                <tr>
+                    <td><button id="5" onclick="uncover(5)"></button></td>
+                    <td><button id="6" onclick="uncover(6)"></button></td>
+                    <td><button id="7" onclick="uncover(7)"></button></td>
+                    <td><button id="8" onclick="uncover(8)"></button></td>
+                    <td><button id="9" onclick="uncover(9)"></button></td>
+                </tr>
+                <tr>
+                    <td><button id="10" onclick="uncover(10)"></button></td>
+                    <td><button id="11" onclick="uncover(11)"></button></td>
+                    <td><button id="12" onclick="uncover(12)"></button></td>
+                    <td><button id="13" onclick="uncover(13)"></button></td>
+                    <td><button id="14" onclick="uncover(14)"></button></td>
+                </tr>
+                <tr>
+                    <td><button id="15" onclick="uncover(15)"></button></td>
+                    <td><button id="16" onclick="uncover(16)"></button></td>
+                    <td><button id="17" onclick="uncover(17)"></button></td>
+                    <td><button id="18" onclick="uncover(18)"></button></td>
+                    <td><button id="19" onclick="uncover(19)"></button></td>
+                </tr>
+            </table>
+        </section>
+        <section id="gameStatistics">
+            <h2 id="time" class="statistics"> Tiempo restante: 60 segundos </h2>
+            <h2 id="hits" class="statistics"> Aciertos: 0 </h2>
+            <h2 id="movements" class="statistics"> Movimientos: 0 </h2>
+        </section>
+    </div>
+    <footer>
+        <h3>
+            <a href="https://www.linkedin.com/in/eugeniacames/" target="_blank"><i class="fa-brands fa-linkedin" style="color: #f5f1f1;"></i></a>
+            <a href="https://github.com/Eucaba" target="_blank"><i class="fa-brands fa-github"  style="color: #f5f1f1;"></i></a>
+        </h3>
+    </footer>
     <script src="script.js"></script>
 </body>
+
 </html>
