@@ -1,3 +1,4 @@
+/*ESTILO GRAL*/
 body {
     background: rgb(102,0,0);
     font-family: 'Englebert', cursive;
@@ -6,16 +7,14 @@ body {
 
 #main {
     display: flex;
-    align-items: stretch; /*funciona como center pero iguala height hijos*/
+    flex-direction: column-reverse;
     justify-content: center;
-    padding: 5px;
+    align-content: center;
 }
 
 #game, #gameStatistics {
     background-color: rgba(255, 255, 255, 0.1);
     border-radius: 1.5%;
-    margin: 5px;
-    padding: 19px;
 }
 
 #gameStatistics {
@@ -23,14 +22,24 @@ body {
     flex-direction: column;
 }
 
-#title {
-    margin-top: 2%;
+#game {
+    display: flex;
+    justify-content: center;
 }
+
+#title {
+    text-align: center;
+    font-size: 2.5rem;
+}
+
+#instructions {
+    text-align: center;
+    font-size: 1.5rem;
+}
+
 .statistics {
     border: 1px solid white;
     border-radius: 1.5%;
-    height: 7rem;
-    width: 26rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -52,14 +61,81 @@ button:hover {
 }
 
 img {
- width: 95%;
-}
-
-h1, h2, h3{
-    text-align: center;
+    width: 97%;
 }
 
 footer {
     text-align: center;
     font-size: 1rem;
+}
+
+@media (min-width: 1024px){
+    #main {
+        flex-direction: row;
+        align-items: stretch; /*funciona como center pero iguala height hijos*/
+        justify-content: center;
+    }
+
+    .statistics {
+        height: 7rem;
+        width: 26rem;
+        font-size: 1.5rem;
+    }
+
+    #game, #gameStatistics {
+        margin: 5px;
+        padding: 19px;
+    }
+
+    #title {margin-top: 2%;}
+}
+
+@media (min-width: 768px) and (max-width: 1023px){
+    
+    #game {
+        padding-top: 10px;
+        padding-bottom: 10px;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    #gameStatistics {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        margin-top: 3%;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    .statistics {
+        padding: 3%;
+        font-size: 1.5rem;
+    }
+
+    #time {padding-left: 3%; padding-right: 1.5%;}
+    #hits {padding-left: 1.5%; padding-right: 1.5%;}
+    #movements {padding-left: 1.5%; padding-right: 3%;}
+}
+
+@media (max-width: 767px){
+
+    button {
+        font-size: 1rem;
+        height: 4rem;
+        width: 4rem;
+        margin: 2px;
+    }
+
+    #game {padding: 3%; margin-bottom: 5%;}
+    #gameStatistics {padding-left: 12px; padding-right: 12px;}
+
+    .statistics {
+        padding: 3%;
+        font-size: 1.5rem;
+    }
+
+    #time {margin-top: 24px; margin-bottom: 12px;}
+    #hits {margin-top: 12px; margin-bottom: 12px;}
+    #movements {margin-top: 12px; margin-bottom: 24px;}
 }

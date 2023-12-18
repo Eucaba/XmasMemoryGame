@@ -114,12 +114,12 @@ function uncover(id) {
 
     } else {
       setTimeout(() => { //setTimeout funciona = a setInterval
+        incorrectAudio.play();
         card1.innerHTML = ' ';
         card2.innerHTML = ' ';
         card1.disabled = false;
         card2.disabled = false;
         uncoveredCards = 0;
-        incorrectAudio.play();
       }, 700)
     }
   }
