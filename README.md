@@ -13,4 +13,6 @@ Pending:
 - make it responsive
 
 ## ‼️ Disclaimers and warnings
-The images are basically AI generated with Bing.
+The images are AI generated with Bing.
+
+Sounds are from [SFBGames](https://sfbgames.itch.io/)'s ChipTone.
