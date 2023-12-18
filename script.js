@@ -13,6 +13,13 @@ let timeLeft = 60;
 let clock = document.getElementById('time');
 let regressiveTime = null;
 let inicialTime = 60;
+/*Para los audios creo nuevo objeto audio, les doy el origen y los meto en su variable*
+para hacerlo sonar variable.play(); */
+let winAudio =new Audio('./sounds/win.wav');
+let lostAudio =new Audio('./sounds/lost.wav');
+let correctAudio =new Audio('./sounds/correct.wav');
+let incorrectAudio =new Audio('./sounds/incorrect.wav');
+let blipAudio =new Audio('./sounds/blip.wav');
 
 /*generamos el arreglo de números necesarios para poder emparejar las "cartas" del juego*/
 let numbers = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10, 10]
@@ -34,6 +41,7 @@ function mesureTime(){
     if (timeLeft == 0){
       clearInterval(regressiveTime);
       uncoverAndBlock();
+      lostAudio.play();
     }
   },1000);
 } /* setInterval(()=>{}, n)
@@ -73,6 +81,7 @@ function uncover(id) {
     card1Content = `<img src="./images/${numbers[id]}.jpg" alt="Card ${numbers[id]}"></img>`;
     card1.innerHTML = card1Content;
     card1.disabled = true;
+    blipAudio.play();
 
   } else if (uncoveredCards == 2) {
     card2 = document.getElementById(id);
@@ -93,12 +102,14 @@ function uncover(id) {
       console.log(hits);
       scoreboard.innerHTML = `Aciertos: ${hits}`;
       uncoveredCards = 0;
+      correctAudio.play();
 
       if (hits == 10) {
         clearInterval(regressiveTime);
         scoreboard.innerHTML = `Aciertos: ${hits} &#129321;`;
         movementsMeter.innerHTML = `Movimientos: ${movements}`;
         clock.innerHTML = `¡Bravo!  ¡Lo lograste! &#129395;<br>Tu tiempo fue de ${inicialTime - timeLeft} segundos.`;
+        winAudio.play();
       }
 
     } else {
@@ -108,6 +119,7 @@ function uncover(id) {
         card1.disabled = false;
         card2.disabled = false;
         uncoveredCards = 0;
+        incorrectAudio.play();
       }, 700)
     }
   }
